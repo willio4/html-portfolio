@@ -76,6 +76,10 @@ p {
         align-items: flex-start;
     }
 
+    .bottom {
+        order: -1;
+    }
+
     
 }
   
