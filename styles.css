@@ -9,6 +9,16 @@
     padding: 20px;
 }
 
+#header {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+#footer {
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+
 html, body, .row, .main-grid {
     height: 100%;
 }
@@ -52,7 +62,6 @@ main {
   object-position: center top;
 }
 
-
 p {
     margin: 0px;
     color: #E5E7EB;
@@ -77,47 +86,93 @@ p {
   align-items: center;
 }
 
-@media (max-width: 768px) {
-    #name {
-        font-size: 2rem;
-    }
-
-    #title {
-        font-size: 1rem;
-        border-bottom: #E5E7EB 1px solid;
-    }
-
-    main {
-      padding: 10px;
-      flex: auto;
-    }
-
-    .top {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .bottom {
-        order: -1;
-    }
-
-
-    
+.stars-container {
+  position: fixed;       /* for absolute children */
+  width: 100%;              /* full viewport width */
+  height: 100%;             /* full viewport height */
+  overflow: hidden;         /* prevents scrollbars */
 }
+
+
+@media (max-width: 768px) {
+  #name {
+    font-size: 2rem;
+  }
+
+  #header, #footer {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  #title {
+    font-size: 1rem;
+    border-bottom: #E5E7EB 1px solid;
+  }
+
+  main {
+    padding: 10px;
+    flex: auto;
+  }
+
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bottom {
+    order: -1;
+  }
+}
+
+@media (min-width: 769px) {
+
   
+}
 
 
-
-
-
-
-
-
+/* Starry Night Sky Background */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+  }
+
+  .shooting-star {
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, white, transparent);
+    animation: shoot 3s infinite ease-in;
+  }
+  
+  .shooting-star:nth-child(1) {
+    top: 20%;
+    left: -100px;
+    animation-delay: 0s;
+  }
+  
+  .shooting-star:nth-child(2) {
+    top: 35%;
+    left: -100px;
+    animation-delay: 1s;
+  }
+  
+  .shooting-star:nth-child(3) {
+    top: 50%;
+    left: -100px;
+    animation-delay: 2s;
+  }
+
+  @keyframes shoot {
+    0% {
+      transform: translateX(0) translateY(0) rotate(25deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(120vw) translateY(50vh) rotate(25deg);
+      opacity: 0;
+    }
+
   }
   
   body {
@@ -146,31 +201,7 @@ p {
     animation: twinkle 8s infinite linear;
   }
   
-  .shooting-star {
-    position: absolute;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, white, transparent);
-    animation: shoot 3s infinite ease-in;
-  }
   
-  .shooting-star:nth-child(1) {
-    top: 20%;
-    left: -100px;
-    animation-delay: 0s;
-  }
-  
-  .shooting-star:nth-child(2) {
-    top: 35%;
-    left: -100px;
-    animation-delay: 1s;
-  }
-  
-  .shooting-star:nth-child(3) {
-    top: 50%;
-    left: -100px;
-    animation-delay: 2s;
-  }
   
   @keyframes twinkle {
     0%,
@@ -182,16 +213,7 @@ p {
     }
   }
   
-  @keyframes shoot {
-    0% {
-      transform: translateX(0) translateY(0) rotate(25deg);
-      opacity: 1;
-    }
-    100% {
-      transform: translateX(120vw) translateY(50vh) rotate(25deg);
-      opacity: 0;
-    }
-  }
+  
   
   /* Additional twinkling stars with different animation timing */
   .stars::after {
