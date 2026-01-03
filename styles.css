@@ -23,7 +23,7 @@ html, body, .row, .main-grid {
     color: #E5E7EB;
 }
 
-#title {
+#title, h2 {
     font-size: 1.2rem;
     color: #9CA3AF;
 }
@@ -43,6 +43,15 @@ body {
 main {
     flex: 1;
 }
+
+.circle {
+  width: 150px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 
 p {
     margin: 0px;
@@ -75,6 +84,7 @@ p {
 
     #title {
         font-size: 1rem;
+        border-bottom: #E5E7EB 1px solid;
     }
 
     .top {
@@ -86,6 +96,7 @@ p {
     .bottom {
         order: -1;
     }
+
 
     
 }
