@@ -1,14 +1,3 @@
-.container-fluid {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.background {
-    background: #111827;
-    padding: 20px;
-}
-
 #header {
   margin-top: 24px;
   margin-bottom: 8px;
@@ -86,11 +75,19 @@ p {
   align-items: center;
 }
 
+img {
+  pointer-events: none;
+}
+
 .stars-container {
-  position: fixed;       /* for absolute children */
-  width: 100%;              /* full viewport width */
-  height: 100%;             /* full viewport height */
-  overflow: hidden;         /* prevents scrollbars */
+  position: fixed;    /* or absolute, relative to viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;        /* put it behind all content */
+  pointer-events: none; /* make it ignore mouse events */
 }
 
 
