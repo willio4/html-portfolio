@@ -19,22 +19,25 @@
     />
 
     <style>
+      main .container {
+        height: auto;
+      }
+      
       .sheet-paper {
         background: rgb(222, 221, 220);
-        width: 60%;
-        min-height: 95%;
-        margin: 20px auto;
-        padding: 40px;
+        width: 50%;
+        aspect-ratio: 1/1.29;
+        margin: auto;
+        padding-top: 24px;
+        padding-bottom: 8px;
+        padding-left: 32px;
+        padding-right: 32px;
+        margin-top: 8px;
+        margin-bottom: 64px;
         box-shadow: 0 0 10px rgba(233, 233, 233, 0.9);
         font-family: 'DM Serif Text', serif;
         border-radius: 5px;
         font-size: smaller;
-      }
-
-      .btn {
-        position: absolute;
-        z-index: 10;
-        right: 22%;
       }
 
       .sheet-paper * {
@@ -53,14 +56,22 @@
         margin-bottom: 16px;
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 1024px) {
         .sheet-paper {
           width: 90%;
-          padding: 20px;
+          height:fit-content;
         }
 
-        .btn {
-          right: 10%;
+      }
+
+      @media (max-width: 767px) {
+        .sheet-paper {
+          width: 90%;
+          height:fit-content;
+        }
+
+        .sheet-paper * {
+          font-size: smaller;
         }
       }
     </style>
@@ -116,22 +127,22 @@
             </svg>
             <p class="ms-1">OW</p>
           </div>
-          <div class="middle col-sm-12 col-md-4 d-flex justify-content-center align-self-bottom">
-            <p><a href="./index.html" class="px-2 my-text-color nav-link">Home</a></p>
-            <p>
+          <div class="middle col-sm-12 col-md-4 d-flex justify-content-center">
+            <a href="./index.html" class="px-2 my-text-color nav-link">Home</a>
+            
               <a
                 href="./portfolio.html"
                 class="px-2 my-text-color nav-link"
                 >Portfolio</a
               >
-            </p>
-            <p>
+            
+            
               <a
                 href="./resume.html"
                 class="px-2 my-text-color text-decoration-underline nav-link"
                 >Resume</a
               >
-            </p>
+            
           </div>
           <div class="bottom col-sm-12 col-md-4 d-flex justify-content-end align-items-center">
             <!-- LinkedIn -->
@@ -202,20 +213,24 @@
     </section>
 
     <!-- Resume Content -->
-    <main>
-      <div class="sheet-paper pt-3 pb-2">
-        <a href="./assets/Omar_Williams.pdf" download>
-          <button type="button" class="btn btn-secondary mb-1 ">
-            Download PDF
-          </button>
+    <main class="container mb-3">
+      <div class="row h-auto mb-1">
+        <div class="col-12 text-end">
+          <a href="./assets/Omar_Williams.pdf" download>
+            <button class="btn btn-secondary mb-1">Download PDF</button>
+          </a>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="sheet-paper col-12">
         
           <h1>Omar Williams</h1>
-          </a>
           <h2>Software Engineer | Full-Stack Development</h2>
             <p>Las Vegas, NV, USA | Open to relocate<br>
             (937) 369-8904 | omarwilliams.tech@gmail.com<br>
             </p>
-        <hr>
+          <hr>
     
             <h3>Professional Summary</h3>
               <p>Computer science graduate with hands-on experience building full-stack web applications and backend systems. Strong foundation in data structures, algorithms, and object-oriented design, with practical experience in Python, Java, C++, SQL, and modern web technologies. Comfortable working across the stack—from REST APIs and databases to responsive front-end interfaces. Proven ability to debug complex issues, learn new technologies quickly, and deliver clean, maintainable code in team-based projects.</p>
@@ -235,6 +250,7 @@
                 <li>Tools & DevOps: Git, Linux, Gunicorn, Render</li>
                 <li>Operating Systems: Windows, Linux</li>
               </ul>
+        </div>
       </div>
     </main>
 
