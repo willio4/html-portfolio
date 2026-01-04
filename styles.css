@@ -105,6 +105,10 @@ img {
   pointer-events: none; /* make it ignore mouse events */
 }
 
+.carousel {
+  width: 50%;
+}
+
 
 @media (max-width: 768px) {
   #name {
@@ -135,11 +139,10 @@ img {
   .bottom {
     order: -1;
   }
-}
 
-@media (min-width: 769px) {
-
-  
+  .carousel {
+    width: 100%;
+  }
 }
 
 
