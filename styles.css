@@ -22,9 +22,24 @@ html, body, .row, .main-grid {
     color: #E5E7EB;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon, 
+.carousel-indicators {
+  filter: invert(1);
+}
+
 #title, h2 {
     font-size: 1.2rem;
     color: #9CA3AF;
+}
+
+.carousel {
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: center;
+
 }
 
 #intro {
